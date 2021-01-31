@@ -11,7 +11,7 @@ import com.emailservice.model.KafkaEmailMessage;
 
 @RestController
 @RequestMapping("kafka")
-public class UserResource {
+public class KafkaProducerController {
 	
 	@Autowired
 	KafkaTemplate<String, KafkaEmailMessage> kafkaTemplate;

@@ -7,7 +7,7 @@ public class KafkaEmailMessage {
 	private String[] bcc;
 	private String subject;
 	private String message;
-	private String[] attachments;
+	private String[] attachments; // urls for file
 	
 	public KafkaEmailMessage() {}
 
