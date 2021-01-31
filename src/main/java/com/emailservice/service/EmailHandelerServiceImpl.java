@@ -1,5 +1,7 @@
 package com.emailservice.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.MessagingException;
 import org.springframework.stereotype.Service;
@@ -13,13 +15,18 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 
 @Service
-public class EmailHandelerServiceImpl {
+public class EmailHandelerServiceImpl implements EmailHandelerService {
 
   @Autowired
   private JavaMailSender javaMailSender;
+  
+  private static final Logger LOGGER = LoggerFactory.getLogger(EmailHandelerServiceImpl.class);
 
   public void sendBasicEmail(String[] to, String subject, String message) throws MessagingException {
- 
+
+	LOGGER.info("Email starts info");
+	LOGGER.debug("Email starts info");
+	LOGGER.error("Email starts info");
     MimeMessage mimeMessage = javaMailSender.createMimeMessage();
 	MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, "utf-8");
 	//mimeMessage.setContent(htmlMsg, "text/html"); /** Use this or below line **/

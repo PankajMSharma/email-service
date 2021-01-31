@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import com.emailservice.model.KafkaEmailMessage;
 
 @Service
-public class KafkaEmail {
+public class KafkaEmailConsumer {
 
 	@KafkaListener(containerFactory="kafkaListenerContainerFactory", topics = "Kafka_Example", groupId = "group_id")
 	public void consumeEmail(KafkaEmailMessage email) {
